@@ -27,3 +27,13 @@ DELETE  /api/tickets/{id}	                Delete a ticket
 
 ## Generate javadoc
 mvn javadoc:javadoc
+
+## Docker
+Build docker container:  
+$ docker build -t ts .  
+  
+Run the container:  
+$ docker run -p 8080:8080 ts  
+
+Run the container with custom JVM options:  
+$ docker run -p 8080:8080 -e "JAVA_OPTS=-Xmx512m" ts  
