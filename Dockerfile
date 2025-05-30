@@ -7,5 +7,4 @@ FROM eclipse-temurin:21
 WORKDIR /app
 COPY --from=builder /app/target/*.war /usr/local/tomcat/webapps/ts.war
 EXPOSE 8080
-# CMD ["catalina.sh", "run"]
 ENTRYPOINT ["sh", "-c", "java ${JAVA_OPTS} -jar /usr/local/tomcat/webapps/ts.war"]
